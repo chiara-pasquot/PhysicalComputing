@@ -7,6 +7,7 @@
 
 ![](https://paper-attachments.dropbox.com/s_F8F1AC22731BD4F2B939A7FBCCF7EA0E0B980977A3D58F674B5B9E09ADFCD575_1591629877367_image.png)
 
+![](https://paper-attachments.dropbox.com/s_F8F1AC22731BD4F2B939A7FBCCF7EA0E0B980977A3D58F674B5B9E09ADFCD575_1591635019651_image.png)
 
 <h1>The Circuit</h1>
 
@@ -40,7 +41,7 @@ The Laser will project a light onto the closest object/wall.
  The jumpWires connect all the above together.
  
 
-What is a Laser Transmitter?
+<h2>What is a Laser Transmitter?</h2>
 
 The origin of the word laser comes from the acronym Light Amplification by Stimulated Emission of Radiation.
 As the acronym says a laser transmitter emits a beam of laser light through a process of optical amplification based on the stimulated emission of electromagnetic radiation
@@ -52,7 +53,7 @@ As the acronym says a laser transmitter emits a beam of laser light through a pr
 
 
 
-What is a Servo Motor?
+<h2>What is a Servo Motor?</h2>
 
 A servo Motoris an actuator that allows for precise control of angular position, velocity and acceleration.
 It can rotate up to 180 degrees and it consists of a small gearing system, a coiled motor and a control circuit, as well as a pot for rotation control.
@@ -63,7 +64,7 @@ It can rotate up to 180 degrees and it consists of a small gearing system, a coi
 
 The Servo motors have 3 pins to connect: one will connect to ground, the second one to power and the last one will connect to a PWM input on the arduino.
 
-What is a Photoresistor?
+<h2>What is a Photoresistor?</h2>
 
 A photoresistor includes a first electrode layer, a photosensitive material layer, and a second electrode layer which are stacked with each other. The first electrode layer is located on a first surface of the photosensitive material and the second electrode layer is located on a second surface, it’s also important to know that they are opposite to each other. Between the first and second layers there is a carbon nanotube film structure consisting of a plurality of carbon nanotubes substantially aligned along a single preferred direction.
 
@@ -208,3 +209,27 @@ https://www.tinkercad.com/things/bAgprTEKalG-final-project/edit
 
 ![](https://paper-attachments.dropbox.com/s_F8F1AC22731BD4F2B939A7FBCCF7EA0E0B980977A3D58F674B5B9E09ADFCD575_1591626062134_image.png)
 
+I decided to create a 3D prototype of the project on tinkercad, firstly because this solution allows the public to understand better how the automated Laser arm should look like, and second becuase if anyone would like to reproduce it at home, they can easily print the parts (there are many online services that allow to do so) and re-create this project.
+I also reproduced most of the components that make up the circuit, but clearly those wouldn’t need to be printed.
+
+
+<h1>The Process</h1>
+
+After deciding what the project was going to be, I started working on a design that could work, at first I considered something similar to a carpet/rug which would be activated my weight sensors, but I then realized that I needed a solution that would work at night, since this is the moment our cat is most active. For this reason I chose to work with a photoresistor, which would activate as soon as the lights in the house are off.
+
+After designing and sketching a few options for the Automated Laser Arm, I decided to choose this one:
+
+![](https://paper-attachments.dropbox.com/s_F8F1AC22731BD4F2B939A7FBCCF7EA0E0B980977A3D58F674B5B9E09ADFCD575_1591636401560_image.png)
+
+
+Initially I drawn the photoresistor at the base of the Arm (closer to the arduino), but I later decided that it was best to have the photoresistor at the top of the main pole (so that it could detect better the light, and work exclusively at night.
+
+The next step for the creation of the project was to assemble the circuit, which I did on Tinkercad,unfortunately tinkercad doesn’t have a Laser Transmitter, for this reason I replaced it with a red LED; the components in the circuit have been renamed to better understand their functionality and how they work with the code.
+
+After putting together all the pieces and trying to make the circuit esthetically pleasing, I started working on the code; here I decided that the servo motor at the base of the arm will move up to nearly 360 degrees, and the other two servos will move only around 90 degrees.
+The servos are moving randomly, the reason is to avoid repetition and predictable movements (afterall we want our cat engaged!).
+The other important part of the code is to activate all the movements and the LED/Laser only at night, for this reason I placed the threshold of the photoresistor at 10000, and made it so that when the number is reached the parts will activate.
+
+The last part of the project was to create the 3D model of the Automated Laser Arm; all the poles have a void inside to allow the Jumpwires to run from each component to the breadboard. The base of the arm has also a void, to allow the storage of the arduino, bread board and one of the three servo motors. 
+
+I had a lot of fun working on this project, and I cannot wait to actually make it with real components (I have to wait until jobs are back running, and we are out of the emergency status). 
